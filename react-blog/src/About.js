@@ -13,7 +13,7 @@ export const About = () => {
 
                 <h2 style={{ color: "white" }}>おてつだい</h2>
                 <div className="d-flex flex-row align-items-start">
-                    <img src="./monad.png" className="img-thumbnail"></img>
+                    <img src={`${process.env.PUBLIC_URL}/monad.png`} alt="monad"></img>
                     <div className="text-break d-flex flex-column align-items-start" style={{ color: "white", marginLeft: "10px" }}>
                         <h3 >たつお</h3>
                         <p style={{ fontSize: "16px" , marginBottom : "10px" }}>かにの代わりにサイトの管理や記事の作成を行う人。</p>
