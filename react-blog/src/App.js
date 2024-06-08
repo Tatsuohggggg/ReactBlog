@@ -1,4 +1,4 @@
-import { BrouserRouter, Link, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Link, Routes, Route, BrowserRouter } from "react-router-dom";
 import { About } from "./About";
 import { Progress } from "./Progress";
 import { GameDiary } from "./GameDiary";
@@ -11,11 +11,12 @@ function App() {
     <BrowserRouter>
       <Container fluid style={{
         height: '100vh',
-        backgroundImage: `url('./photo1.jpg')`,
+        backgroundImage: `url('${process.env.PUBLIC_URL}/photo1.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}>
+        {/* <img src={`${process.env.PUBLIC_URL}/photo1.jpg`} /> */}
         <Header />
         <div className="d-flex flex-row align-item-start">
           <Tabs />
@@ -24,10 +25,8 @@ function App() {
             <Route path="/GameDiary" element={<GameDiary />} />
             <Route path="/Progress" element={<Progress />} />
           </Routes>
-          {/* <RightSpace /> */}
         </div>
       </Container>
-
     </BrowserRouter>
   );
 }
@@ -53,11 +52,5 @@ const Tabs = () => {
     </div>
   );
 };
-
-const RightSpace = () => {
-  return (
-    <div className="" style={{ width: "20vw" }}></div>
-  )
-}
 
 export default App;
