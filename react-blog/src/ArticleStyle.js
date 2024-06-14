@@ -13,6 +13,6 @@ export const articlestyle = {
         if (props.alt === 'thumbnail') {
             style = { ...style,width:"100%",height:"auto" }
         };
-        return <Image style={style} src={`${process.env.PUBLIC_URL}/${props.src}`} alt="aaa">{props.children}</Image>;
+        return <Image style={style} src={`${process.env.PUBLIC_URL}/image/${props.src}`} alt="aaa">{props.children}</Image>;
     },
 }
