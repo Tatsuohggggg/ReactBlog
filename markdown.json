@@ -1,0 +1,17 @@
+{
+    "articles": [
+        {
+            "title": "【P3R】目を閉じますか？",
+            "date": "20240612",
+            "thumbnail": "/20240217182628.jpg",
+            "link": "/persona3re.md",
+            "path": "/persona3re"
+        },
+        {
+            "title": "bbb",
+            "date": "20240611",
+            "link": "${process.env.public}/.md",
+            "path": "/b"
+        }
+    ]
+}
