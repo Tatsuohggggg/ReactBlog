@@ -48,7 +48,7 @@ const ArticleCard = ({ value }) => {
         <Link to={`${nowpagepath}${value.path}`} style={{ textDecoration: "none" }}>
             <button className="cardcontent d-flex flex-row" style={{ backgroundColor: "transparent", width: "100%"}}>
                 <div className="header">
-                    <Image className="thumbnail p-2" src={`${process.env.PUBLIC_URL}${value.thumbnail}`} />
+                    <Image className="thumbnail p-2" src={`${process.env.PUBLIC_URL}/image${value.thumbnail}`} />
                 </div>
                 <div className="body d-flex flex-column">
                     <div className="date">{value.date}</div>

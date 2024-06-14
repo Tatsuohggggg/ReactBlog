@@ -9,7 +9,6 @@ export const RenderPage = (props) => {
     const url = useLocation();
     const path = url.pathname;
     const distination = path.substring(path.lastIndexOf("/"));
-    const [jsonpath, setJsonpath] = useState("");
     const [error, setError] = useState(null);
     const [title, setTitle] = useState("");
     const [markdown, setMarkdown] = useState("");
@@ -18,20 +17,24 @@ export const RenderPage = (props) => {
     const fetchJsonIndex = async () => {
         try {
             let path;
-            console.log(props.link);
+            let filename;
             if (props.link === "/GameDiary") {
                 path = "/markdown.json";
+                filename = "/articles";
             }
-            else if(props.link === "/Progress"){
+            else if (props.link === "/Progress") {
                 path = "/progressindex.json";
+                filename = "/progress";
             }
-            //console.log(path);
+
             //markdown.jsonから、pathと同じtitleを含む要素番号を探す
+            //console.log(path);
             const response = await fetch(`${process.env.PUBLIC_URL}${path}`);
+            console.log(response);
             const data = await response.json();
             const articleIndex = data.articles.findIndex(item => item.path === distination);
             if (articleIndex !== -1) {
-                fetchJsonData(`/articles${data.articles[articleIndex].link}`);
+                fetchJsonData(`${filename}${data.articles[articleIndex].link}`);
                 setTitle(data.articles[articleIndex].title);
             }
             //指定した要素番号のlinkを読み込んで、記事をセットする
