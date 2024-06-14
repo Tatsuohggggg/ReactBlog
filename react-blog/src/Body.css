@@ -2,6 +2,10 @@ h1 {
     color: white;
 }
 
+.includemargintoph1 {
+    margin-top: 40px;
+}
+
 h2 {
     font-size: 32px;
     color: white;
@@ -11,4 +15,8 @@ p {
     font-size: 18px;
     color: white;
     margin-bottom: 12px;
+}
+
+.parent::-webkit-scrollbar {
+    opacity: 0;
 }

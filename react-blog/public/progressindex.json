@@ -1,0 +1,18 @@
+{
+    "articles": [
+        {
+            "title": "【GOODBYE WORLD】\r\nただただ蟹井と辛くなっていく僕",
+            "date": "20221118",
+            "thumbnail":"/20221118223744.png",
+            "link": "/GOODBYE_WORLD.md",
+            "path": "/GOODBYE_WORLD"
+        },
+        {
+            "title": "【P3R】目を閉じますか？",
+            "date": "20240612",
+            "thumbnail": "/20240217182628.jpg",
+            "link": "/persona3re.md",
+            "path": "/persona3re"
+        }
+    ]
+}

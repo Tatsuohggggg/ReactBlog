@@ -1,26 +1,40 @@
-import { Container } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import './Body.css';
+import './About.css';
+import { articlestyle } from "./ArticleStyle";
 
 export const About = () => {
     return (
-        <Container style={{ width: "80vw" }}>
+        <Container fluid className="overflow-auto text-left parent" style={{ width: "50%", height: "100vh", marginLeft: "0px" }}>
             <div className="text-wrap" style={{ width: "40vw" }}>
-                <h1 className="" style={{ color: "white" }}>About</h1>
-
-                <h2 style={{ color: "white", marginTop: "30px", marginBottom: "10px" }}>ここは</h2>
-                <p className="text-break">ゲームが大好きなおててやわらかかにが、ゲームを遊び、そして作ります。</p>
-                <p className="text-break">かにはゲームを通じて、みんなと仲良くなりたいようです...</p>
-
-                <h2 style={{ color: "white" }}>おてつだい</h2>
-                <div className="d-flex flex-row align-items-start">
-                    <img src={`${process.env.PUBLIC_URL}/monad.png`} alt="monad"></img>
-                    <div className="text-break d-flex flex-column align-items-start" style={{ color: "white", marginLeft: "10px" }}>
-                        <h3 >たつお</h3>
-                        <p style={{ fontSize: "16px" , marginBottom : "10px" }}>かにの代わりにサイトの管理や記事の作成を行う人。</p>
-                        <p style={{ fontSize: "16px" }}>いくらおててが柔らかくても、かににキーボード操作は厳しいらしい。</p>
-                    </div>
-                </div>
+                <AboutContent />
             </div>
         </Container>
     );
 };
+
+const AboutContent = () => {
+    const [aboutContent, setAboutContent] = useState("");
+
+    useEffect(() => {
+        fetch(`${process.env.PUBLIC_URL}/About.md`)
+            .then((response) => {
+                return response.text();
+            })
+            .then((md) => {
+                setAboutContent(md);
+            });
+    }, []);
+
+    return (<ReactMarkdown rehypePlugins={rehypeRaw} components={articlestyle}>{aboutContent}</ReactMarkdown>);
+}
+
+// const components = {
+//     h1: ({ ...props }) => <h1 className={`${props.className}`} style={{ fontSize: "32px", color: "white", width: "80%", marginBottom: "20px", paddingBottom: "4px", borderBottom: "2px solid white" }}>{props.children}</h1>,
+//     h2: ({ ...props }) => <h2 style={{ color: "white", marginLeft: "8px" }}>{props.children}</h2>,
+//     p: ({ ...props }) => <p style={{ marginLeft: "12px" }}>{props.children}</p>,
+//     img: ({ ...props }) => <Image style={{ width: "128px", height: "128px" }} src={`${process.env.PUBLIC_URL}/${props.src}`} alt="aaa">{props.children}</Image>,
+// };

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+.cardcontent {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+}
+
+.cardcontent:not(:last-child) {
+    border-bottom: 1px dashed rgb(205, 203, 203);
+}
+
+.thumbnail {
+    height: 120px;
+    width: 120px;
+}
+
+.body {
+    margin-top: 12px;
+    text-align: left;
+}
+
+.date {
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    font-family: "游明朝";
+    opacity: 0.7;
+}
+
+.title {
+    color: white;
+    font-size: 18px;
+    font-family: "Noto Sans JP";
+}
+
+.card-text {
+    color: white;
+}

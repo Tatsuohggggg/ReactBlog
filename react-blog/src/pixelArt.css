@@ -1,0 +1,3 @@
+.parent::-webkit-scrollbar {
+    opacity: 0;
+}
