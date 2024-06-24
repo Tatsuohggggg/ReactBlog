@@ -40,7 +40,7 @@ function App() {
 const Header = () => {
   return (
     <Row className="p-3" style={{ color: "white", fontFamily: "游ゴシック", }}>
-      <Link to="/" style={{ textDecoration: "none" }}>
+      <Link to="/" style={{ textDecoration: "none", width:"60vw" }}>
         <h1 className="" style={{ fontSize: "36px", color: "white" }}>今日はもう寝ようぜ</h1>
       </Link>
       <p style={{ fontSize: "14px" }}>早く寝たほうがいいゲーマーブログ</p>

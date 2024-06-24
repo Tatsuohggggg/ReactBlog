@@ -6,8 +6,8 @@ import './pixelArt.css';
 
 export const PixelArt = () => {
     return (
-        <Container fluid className='overflow-auto text-left parent' style={{width: "40%",height: "80vh",marginLeft: "0px" }}>
-            <div>
+        <Container fluid className='overflow-auto text-left parent' style={{width: "70vw",height: "80vh",marginLeft: "0px" }}>
+            <div style={{width: "40vw"}}>
                 <header className='d-flex flex-row align-items-end'>
                     <h1 style={{ color: "white" }}>ドット絵</h1>
                     <p style={{ fontSize: "14px",marginBottom: "8px",marginLeft:"5px" }}>気ままにお絵描き</p>

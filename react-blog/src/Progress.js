@@ -25,14 +25,14 @@ export const Progress = () => {
     }, [])
 
     return (
-        <Container className="overflow-auto text-left parent d-flex flex-column" style={{ width: "40%", height: "80vh", marginLeft: "0px" }}>
-            <div>
+        <Container className="overflow-auto text-left parent d-flex flex-column" style={{ width: "70vw", height: "80vh", marginLeft: "0px" }}>
+            <div style={{width:"40vw"}}>
                 <header className='d-flex flex-row align-items-end' style={{ marginBottom: "12px", borderBottom: "2px solid white", opacity: "1" }}>
                     <h1 style={{ color: "white" }}>制作進捗</h1>
                     <p style={{ fontSize: "14px", marginBottom: "8px", marginLeft: "5px" }}>遊んだゲームの感想や紹介などなど</p>
                 </header>
             </div>
-            <div style={{ width: "100%", height: "100vh", backgroundColor: 'rgba(128,128,128,0.5)' }}>
+            <div style={{ width: "40vw", height: "100vh", backgroundColor: 'rgba(128,128,128,0.5)' }}>
                 {files.map((item, index) => (
                     <ArticleCard key={index} value={item} />
                 ))}
